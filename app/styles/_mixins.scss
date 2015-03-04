@@ -1,0 +1,64 @@
+@mixin over($mobile-touch:false, $focus:true) {
+  &:not(.is-disabled) {
+    html.no-touch & {
+      @if $focus {
+        &:hover,
+        &:focus {
+          @content;
+        }
+      } @else {
+        &:hover {
+          @content;
+        }
+      }
+    }
+    html.touch & {
+      @if $mobile-touch {
+        @content;
+      }
+      -webkit-tap-highlight-color: rgba(#000, 0);
+    }
+  }
+}
+
+
+@mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
+  background-image: url('#{$file-1x}');
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url('#{$file-2x}');
+    background-size: $width-1x $height-1x;
+  }
+}
+
+@mixin responsive($breakpoint, $max-width:false) {
+
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    @if $max-width {
+      @media only screen and (max-width: $value) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: $value) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin clearfix {
+  zoom: 1;
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}

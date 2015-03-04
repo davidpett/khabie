@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('sayings', {path: '/'}, function() {
+    this.resource('saying', {path: ':saying_id'});
+  });
 });
 
 export default Router;
