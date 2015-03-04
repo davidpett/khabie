@@ -88,6 +88,13 @@ a {
   }
 }
 
+  .item__content-count {
+    color: $color-border;
+    font-size: 14px;
+    font-weight: 200;
+    padding-left: 20px;
+  }
+
   .item__meta {
     overflow: hidden;
   }

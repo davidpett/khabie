@@ -6,6 +6,14 @@ export default Ember.Component.extend({
     ':saying-item'
   ],
 
+  formattedCount: function() {
+    var str = ' times';
+    if (this.get('model.count') === 1) {
+      str = ' time';
+    }
+    return this.get('model.count') + str;
+  }.property('model.count'),
+
   timeStamp: function() {
     return moment(this.get('model.lastTime')).fromNow();
   }.property('model.lastTime'),
@@ -21,7 +29,7 @@ export default Ember.Component.extend({
           time = moment.utc().format();
       model.set('lastTime', time);
       model.get('times').pushObject(time);
-      
+
       model.save();
     }
   }
