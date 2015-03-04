@@ -5,16 +5,18 @@ export default Ember.Controller.extend({
 
   actions: {
     createSaying: function() {
-      var saying = this.get('model').findBy('text', this.get('sayingText'));
+      var saying = this.get('model').findBy('text', this.get('sayingText')),
+          time = moment.utc().format();
 
       if (!saying) {
         saying = this.store.createRecord('saying', {
           text: this.get('sayingText'),
-          times: Ember.A()
+          times: Ember.A(),
+          lastTime: time
         });
       }
 
-      saying.get('times').pushObject(moment.utc().format());
+      saying.get('times').pushObject(time);
       saying.save();
 
 

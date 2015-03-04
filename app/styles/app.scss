@@ -55,12 +55,12 @@ a {
 }
 
   .matheny-header__image {
-    border: 1px solid $color-border;
+    border: 1px solid $color-border-light;
     border-radius: 50%;
   }
 
   .matheny-header__title {
-    font-size: 72px;
+    font-size: 64px;
     font-weight: 700;
   }
 
@@ -87,6 +87,26 @@ a {
     border-bottom: none;
   }
 }
+
+  .item__meta {
+    overflow: hidden;
+  }
+  .item__meta-timestamp {
+    color: $color-border;
+    float: left;
+    font-size: 12px;
+    font-weight: 200;
+  }
+
+  .item__meta-controls {
+    float: right;
+    font-size: 12px;
+    font-weight: 200;
+  }
+
+  .item__meta-plus {
+    padding: 0 10px;
+  }
 
 .matheny-footer__content {
   border-top: 1px solid $color-border;

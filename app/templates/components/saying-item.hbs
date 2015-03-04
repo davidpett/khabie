@@ -1,1 +1,7 @@
-<a href="#" {{action 'incrementCount'}}>{{model.count}} - {{model.text}}</a>
+<div class="item__content">
+  <span class="item__content-saying">{{model.text}}</span> - <span class="item__content-count">{{model.count}}</span>
+</div>
+<div class="item__meta">
+  <span class="item__meta-timestamp">{{timeStamp}}</span>
+  <span class="item__meta-controls">heard this? <a class="item__meta-plus" href="#" {{action 'incrementCount'}}>+1</a></span>
+</div>

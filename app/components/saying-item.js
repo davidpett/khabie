@@ -6,6 +6,10 @@ export default Ember.Component.extend({
     ':saying-item'
   ],
 
+  timeStamp: function() {
+    return moment(this.get('model.lastTime')).fromNow();
+  }.property('model.lastTime'),
+
   gotoAction: null,
 
   actions: {
@@ -13,8 +17,11 @@ export default Ember.Component.extend({
       this.sendAction('gotoAction', this.get('model'));
     },
     incrementCount: function() {
-      var model = this.get('model');
-      model.get('times').pushObject(moment.utc().format());
+      var model = this.get('model'),
+          time = moment.utc().format();
+      model.set('lastTime', time);
+      model.get('times').pushObject(time);
+      
       model.save();
     }
   }
