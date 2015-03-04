@@ -55,7 +55,7 @@ a {
 }
 
   .matheny-header__image {
-    border: 1px solid $color-border-light;
+    border: 1px solid $color-border;
     border-radius: 50%;
   }
 
@@ -64,21 +64,48 @@ a {
     font-weight: 700;
   }
 
+.matheny-form {
+  display: block;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
 .matheny-input {
-  border: none;
-  border-bottom: 1px solid $color-border;
+  border: 1px solid $color-border;
+  float: left;
   font-size: 24px;
+  height: 40px;
+  margin-top: 10px;
   outline: none;
   padding: 5px 20px;
-  width: 100%;
+  width: percentage(5/6);
+}
+
+.matheny-button {
+  background-color: $color-red;
+  border: 1px solid $color-red;
+  color: $color-white;
+  float: left;
+  font: $font-body;
+  font-size: 16px;
+  height: 40px;
+  margin-top: 10px;
+  padding: 5px;
+  text-transform: uppercase;
+  width: percentage(1/6);
 }
 
 .saying-list {
   margin: 40px 0;
 }
 
+  .list__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
 .saying-item {
-  border-bottom: 1px solid $color-border-light;
+  border-bottom: 1px solid $color-border;
   font-size: 18px;
   font-weight: 700;
   padding: 10px 20px;
@@ -89,7 +116,7 @@ a {
 }
 
   .item__content-count {
-    color: $color-border;
+    color: $color-light;
     font-size: 14px;
     font-weight: 200;
     padding-left: 20px;
@@ -99,7 +126,7 @@ a {
     overflow: hidden;
   }
   .item__meta-timestamp {
-    color: $color-border;
+    color: $color-light;
     float: left;
     font-size: 12px;
     font-weight: 200;
@@ -117,8 +144,8 @@ a {
 
 .matheny-footer__content {
   border-top: 1px solid $color-border;
-  color: $color-border;
+  color: $color-light;
   font-size: 14px;
-  padding-top: 20px;
+  padding: 20px 0 50px;
   text-align: center;
 }

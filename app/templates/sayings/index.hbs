@@ -1,5 +1,12 @@
 <section class="saying-list">
-  {{#each sortedItems as |item|}}
+  <h2 class="list__title">Recently Heard</h2>
+  {{#each recentTopItems as |item|}}
     {{saying-item model=item gotoAction="gotoItem"}}
   {{/each}}
 </section>
+
+<form class="matheny-form" {{action 'createSaying' on='submit'}}>
+  <label class="list__title">What Did You Here?</label>
+  {{input value=sayingText classNames="matheny-input" placeholder="inside there"}}
+  <button class="matheny-button">Submit</button>
+</form>
