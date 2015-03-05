@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'matheny',
     environment: environment,
     baseURL: '/',
-    firebaseUrl: 'matheny',
+    firebaseURL: '',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -22,6 +22,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.firebaseURL = 'matheny-dev';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -42,7 +43,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.firebaseURL = 'matheny-dev';
   }
 
   return ENV;

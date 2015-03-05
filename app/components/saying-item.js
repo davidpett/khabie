@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 const get = Ember.get,
-      set = Ember.set,
       computed = Ember.computed;
 
 export default Ember.Component.extend({
@@ -14,6 +13,7 @@ export default Ember.Component.extend({
     let str = ' times';
 
     if (get(this, 'model.count') === 1) {
+      Ember.Logger.log(str);
       str = ' time';
     }
     return get(this, 'model.count') + str;
@@ -32,10 +32,7 @@ export default Ember.Component.extend({
     incrementCount() {
       const model = get(this, 'model'),
             time = moment.utc().format();
-
-      set(model, 'lastTime', time);
-      get(model, 'times').pushObject(time);
-
+      model.get('times').pushObject(time);
       model.save();
     }
   }

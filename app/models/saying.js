@@ -7,10 +7,10 @@ const get = Ember.get,
 
 export default DS.Model.extend({
   text: attr('string'),
-  lastTime: attr('string'),
   times: attr('array'),
 
   count: computed('times', function() {
     return get(this, 'times.length');
-  })
+  }),
+  lastTime: computed.readOnly('times.lastObject')
 });

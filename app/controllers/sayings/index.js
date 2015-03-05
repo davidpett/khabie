@@ -26,7 +26,6 @@ export default Ember.Controller.extend({
           times: Ember.A()
         });
       }
-      set(saying, 'lastTime', time);
       get(saying, 'times').pushObject(time);
       saying.save();
 
