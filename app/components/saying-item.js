@@ -1,34 +1,40 @@
 import Ember from 'ember';
 
+const get = Ember.get,
+      set = Ember.set,
+      computed = Ember.computed;
+
 export default Ember.Component.extend({
   tagName: 'div',
-  classNameBindings: [
+  classNames: [
     ':saying-item'
   ],
 
-  formattedCount: function() {
-    var str = ' times';
-    if (this.get('model.count') === 1) {
+  formattedCount: computed('model.count', function() {
+    let str = ' times';
+
+    if (get(this, 'model.count') === 1) {
       str = ' time';
     }
-    return this.get('model.count') + str;
-  }.property('model.count'),
+    return get(this, 'model.count') + str;
+  }),
 
-  timeStamp: function() {
-    return moment(this.get('model.lastTime')).fromNow();
-  }.property('model.lastTime'),
+  timeStamp: computed('model.lastTime', function() {
+    return moment(get(this, 'model.lastTime')).fromNow();
+  }),
 
   gotoAction: null,
 
   actions: {
-    gotoAction: function() {
-      this.sendAction('gotoAction', this.get('model'));
+    gotoAction() {
+      this.sendAction('gotoAction', get(this, 'model'));
     },
-    incrementCount: function() {
-      var model = this.get('model'),
-          time = moment.utc().format();
-      model.set('lastTime', time);
-      model.get('times').pushObject(time);
+    incrementCount() {
+      const model = get(this, 'model'),
+            time = moment.utc().format();
+
+      set(model, 'lastTime', time);
+      get(model, 'times').pushObject(time);
 
       model.save();
     }

@@ -5,6 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'matheny',
     environment: environment,
     baseURL: '/',
+    firebaseUrl: 'matheny',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

@@ -1,11 +1,16 @@
 import DS from 'ember-data';
+import Ember from 'ember';
+
+const get = Ember.get,
+      attr = DS.attr,
+      computed = Ember.computed;
 
 export default DS.Model.extend({
-  text: DS.attr('string'),
-  lastTime: DS.attr('string'),
-  times: DS.attr('array'),
+  text: attr('string'),
+  lastTime: attr('string'),
+  times: attr('array'),
 
-  count: function() {
-    return this.get('times.length');
-  }.property('times')
+  count: computed('times', function() {
+    return get(this, 'times.length');
+  })
 });
