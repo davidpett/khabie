@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
   items: computed.readOnly('model'),
 
   recentSortProp: ['lastTime:desc'],
-  recentSortedItems: Ember.computed.sort('items', 'recentSortProp'),
+  recentSortedItems: computed.sort('items', 'recentSortProp'),
   recentTopItems: computed('recentSortedItems.@each.lastTime', function() {
     return get(this, 'recentSortedItems').slice(0, 5);
   }),
