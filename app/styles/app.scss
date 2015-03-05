@@ -40,7 +40,8 @@ a {
 .container {
   display: block;
   margin: 0 auto;
-  max-width: 600px;
+  padding: 0 20px;
+  max-width: 640px;
 }
 
 .saying-item {
@@ -62,11 +63,19 @@ a {
   .matheny-header__title {
     font-size: 64px;
     font-weight: 700;
+
+    a {
+      color: $color-black;
+      &:hover,
+      &:focus {
+        color: $color-red;
+      }
+    }
   }
 
 .matheny-form {
   display: block;
-  margin-bottom: 40px;
+  margin: 0 0 40px;
   overflow: hidden;
 }
 
@@ -80,6 +89,10 @@ a {
   outline: none;
   padding: 5px 20px;
   width: percentage(5/6);
+
+  &:focus {
+    border-color: $color-red;
+  }
 }
 
 .matheny-button {
@@ -92,6 +105,7 @@ a {
   font-weight: 700;
   height: 40px;
   margin-top: 10px;
+  outline: none;
   padding: 5px;
   text-transform: uppercase;
   width: percentage(1/6);
@@ -148,6 +162,7 @@ a {
   border-top: 1px solid $color-border;
   color: $color-light;
   font-size: 14px;
+  margin-top: 20px;
   padding: 20px 0 50px;
   text-align: center;
 }

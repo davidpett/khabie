@@ -1,0 +1,8 @@
+<section class="saying-list">
+  <h2 class="list__title">Most Heard</h2>
+  {{#each sortedItems as |item|}}
+    {{saying-item model=item gotoAction="gotoItem"}}
+  {{/each}}
+</section>
+
+{{link-to 'Most Recent' 'sayings'}}

@@ -17,6 +17,10 @@ export default Ember.Controller.extend({
 
   actions: {
     createSaying() {
+      if (!get(this, 'sayingText') || get(this, 'sayingText') === '') {
+        return;
+      }
+
       const time = moment.utc().format();
       let saying = get(this, 'model').findBy('text', get(this, 'sayingText'));
 
@@ -26,6 +30,7 @@ export default Ember.Controller.extend({
           times: Ember.A()
         });
       }
+      set(saying, 'lastTime', time);
       get(saying, 'times').pushObject(time);
       saying.save();
 
