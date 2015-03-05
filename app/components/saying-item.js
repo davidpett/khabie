@@ -7,7 +7,7 @@ const get = Ember.get,
 export default Ember.Component.extend({
   tagName: 'div',
   classNames: [
-    ':saying-item'
+    'saying-item'
   ],
 
   formattedCount: computed('model.count', function() {
