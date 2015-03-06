@@ -1,7 +1,7 @@
 <section class="saying-list">
   <h2 class="list__title">Recently Heard</h2>
   {{#each recentTopItems as |item|}}
-    {{saying-item model=item gotoAction="gotoItem"}}
+    {{saying-item model=item gotoAction="gotoItem" isAdmin=admin}}
   {{/each}}
 </section>
 

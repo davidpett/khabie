@@ -9,6 +9,7 @@ export default Ember.Component.extend({
   classNames: [
     'saying-item'
   ],
+  isAdmin: false,
 
   formattedCount: computed('model.count', function() {
     let str = 'times';
@@ -26,6 +27,12 @@ export default Ember.Component.extend({
   gotoAction: null,
 
   actions: {
+    deleteItem() {
+      const model = get(this, 'model');
+
+      model.deleteRecord();
+      model.save();
+    },
     gotoAction() {
       this.sendAction('gotoAction', get(this, 'model'));
     },

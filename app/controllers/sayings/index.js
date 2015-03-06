@@ -5,6 +5,9 @@ const get = Ember.get,
       computed = Ember.computed;
 
 export default Ember.Controller.extend({
+  queryParams: 'admin',
+  admin: false,
+  
   sayingText: null,
 
   items: computed.readOnly('model'),
