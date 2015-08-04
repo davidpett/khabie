@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'matheny',
+    modulePrefix: 'khabie',
     environment: environment,
     baseURL: '/',
     firebaseURL: '',
@@ -22,7 +22,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.firebaseURL = 'matheny';
+    ENV.firebaseURL = 'khabie';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -43,7 +43,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.firebaseURL = 'matheny';
+    ENV.firebaseURL = 'khabie';
   }
 
   return ENV;

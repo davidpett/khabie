@@ -49,18 +49,18 @@ a {
   width: 100%;
 }
 
-.matheny-header__content {
+.khabie-header__content {
   margin: 30px auto;
   text-align: center;
   width: 100%;
 }
 
-  .matheny-header__image {
+  .khabie-header__image {
     border: 1px solid $color-border;
     border-radius: 50%;
   }
 
-  .matheny-header__title {
+  .khabie-header__title {
     font-size: 64px;
     font-weight: 700;
 
@@ -73,13 +73,13 @@ a {
     }
   }
 
-.matheny-form {
+.khabie-form {
   display: block;
   margin: 0 0 40px;
   overflow: hidden;
 }
 
-.matheny-input {
+.khabie-input {
   border: 1px solid $color-border;
   float: left;
   font-family: $font-body !important;
@@ -95,7 +95,7 @@ a {
   }
 }
 
-.matheny-button {
+.khabie-button {
   background-color: $color-red;
   border: 1px solid $color-red;
   color: $color-white;
@@ -158,7 +158,7 @@ a {
     padding: 0 10px;
   }
 
-.matheny-footer__content {
+.khabie-footer__content {
   border-top: 1px solid $color-border;
   color: $color-light;
   font-size: 14px;
